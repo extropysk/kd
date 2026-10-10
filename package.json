@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "pnpm dlx serve@14 out --listen 3000"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
