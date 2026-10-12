@@ -3,7 +3,46 @@ import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import { resolve } from 'node:path'
-import { verifyEndpoints } from '../scripts/verify-public.mjs'
+import { validateMarkdownError, validateOrganization, variesOnAccept, verifyEndpoints } from '../scripts/verify-public.mjs'
+
+test('exported Organization includes the confirmed public address and inquiry contact', async () => {
+  for (const file of ['index.html', 'about/index.html', 'contact/index.html', 'privacy/index.html', '404.html']) {
+    const html = await readFile(resolve('out', file), 'utf8')
+    const match = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)
+    assert.ok(match, `${file} must expose JSON-LD in the initial HTML`)
+    const organization = JSON.parse(match[1]).worksFor
+    validateOrganization(organization)
+    assert.deepEqual(organization.address, { '@type': 'PostalAddress', addressLocality: 'Poprad', addressCountry: 'SK' })
+    for (const field of ['address', 'contactPoint']) {
+      const incomplete = { ...organization }
+      delete incomplete[field]
+      assert.throws(() => validateOrganization(incomplete), `${field} is required`)
+    }
+    assert.throws(() => validateOrganization({ ...organization, address: { '@type': 'Place', addressLocality: 'Poprad', addressCountry: 'SK' } }))
+    assert.throws(() => validateOrganization({ ...organization, contactPoint: { '@type': 'ContactPoint', email: 'kristian.duda@extropy.sk', contactType: '' } }))
+  }
+})
+
+test('Vary must contain the exact Accept token, including combined and case-insensitive headers', () => {
+  for (const vary of ['Accept', 'accept-encoding, Accept', 'ACCEPT, Accept-Encoding']) {
+    assert.equal(variesOnAccept(new Headers({ Vary: vary })), true)
+  }
+  for (const vary of ['', 'accept-encoding', 'X-Accept', 'Accept-Language', '*']) {
+    assert.equal(variesOnAccept(new Headers({ Vary: vary })), false)
+  }
+  assert.equal(variesOnAccept(new Headers()), false)
+})
+
+test('Markdown 404 audit requires a real Markdown body, media type, discovery link and cache variation', async () => {
+  const body = await readFile('public/404.md', 'utf8')
+  const headers = new Headers({ 'Content-Type': 'text/markdown; charset=utf-8', Vary: 'Accept-Encoding, Accept' })
+  validateMarkdownError(body, headers)
+  assert.throws(() => validateMarkdownError(body, new Headers({ 'Content-Type': 'text/html', Vary: 'Accept' })))
+  assert.throws(() => validateMarkdownError(body, new Headers({ 'Content-Type': 'text/markdown', Vary: 'X-Accept' })))
+  assert.throws(() => validateMarkdownError('# 404', headers))
+  assert.throws(() => validateMarkdownError('# 404 — This page does not exist.', headers))
+  assert.throws(() => validateMarkdownError(`${body}\n<html>Not found</html>`, headers))
+})
 
 test('GitHub Pages static export exposes discovery files while preserving HTML responses', async () => {
   const types = { '.html': 'text/html', '.txt': 'text/plain', '.md': 'text/plain', '.xml': 'application/xml', '.png': 'image/png' }

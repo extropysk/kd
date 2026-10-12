@@ -38,7 +38,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: 'https://kd.extropy.sk/',
     jobTitle: 'Software Architect & Agent Orchestrator',
     email: 'kristian.duda@extropy.sk',
-    worksFor: { '@type': 'Organization', '@id': 'https://extropy.sk/#organization', name: 'Extropy', url: 'https://extropy.sk/', contactPoint: { '@type': 'ContactPoint', email: 'kristian.duda@extropy.sk', contactType: 'Software architecture and engineering inquiries' } },
+    worksFor: {
+      '@type': 'Organization',
+      '@id': 'https://extropy.sk/#organization',
+      name: 'Extropy',
+      url: 'https://extropy.sk/',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'kristian.duda@extropy.sk',
+        contactType: 'Software architecture and engineering inquiries',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Poprad',
+        addressCountry: 'SK',
+      },
+    },
     homeLocation: { '@type': 'Place', name: 'Poprad, Slovakia' },
     sameAs: ['https://github.com/kristianduda', 'https://linkedin.com/in/kristianduda'],
     knowsAbout: ['Software architecture', 'AI agent orchestration', 'Node.js', 'React', 'Next.js'],

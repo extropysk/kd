@@ -1,6 +1,31 @@
 import assert from 'node:assert/strict'
 import { pathToFileURL } from 'node:url'
 
+export function validateOrganization(organization) {
+  assert.equal(organization['@type'], 'Organization')
+  assert.equal(organization.name, 'Extropy')
+  assert.equal(organization.url, 'https://extropy.sk/')
+  assert.equal(organization.contactPoint['@type'], 'ContactPoint')
+  assert.equal(organization.contactPoint.email, 'kristian.duda@extropy.sk')
+  assert.ok(organization.contactPoint.contactType.length > 10)
+  assert.equal(organization.address?.['@type'], 'PostalAddress', 'Organization requires a PostalAddress')
+  assert.equal(organization.address.addressLocality, 'Poprad')
+  assert.equal(organization.address.addressCountry, 'SK')
+}
+
+export function variesOnAccept(headers) {
+  return headers.get('vary')?.split(',').some((value) => value.trim().toLowerCase() === 'accept') || false
+}
+
+export function validateMarkdownError(body, headers) {
+  assert.match(headers.get('content-type') || '', /^text\/markdown(?:\s*;|$)/i)
+  assert.ok(variesOnAccept(headers), '404 must vary on Accept')
+  assert.ok(body.trim().length >= 20, 'Markdown error explanation must have at least 20 characters')
+  assert.match(body, /^# 404/)
+  assert.ok(!/<(?:html|script|body)\b/i.test(body), 'Markdown error must not contain the HTML document')
+  assert.match(body, /\[[^\]]+\]\(https:\/\/kd\.extropy\.sk\/(llms\.txt|sitemap\.xml)\)/)
+}
+
 export function visibleArticleText(body) {
   const article = body.match(/<article\b[^>]*>(.*?)<\/article>/s)
   assert.ok(article, 'trust page must have a visible article')
@@ -35,13 +60,7 @@ export async function verifyEndpoints(base, { requireNegotiation = false } = {})
       assert.equal(person.url, 'https://kd.extropy.sk/')
       assert.ok(person.description.length > 20)
       assert.equal(person.sameAs.length, 2)
-      const organization = person.worksFor
-      assert.equal(organization['@type'], 'Organization')
-      assert.equal(organization.name, 'Extropy')
-      assert.equal(organization.url, 'https://extropy.sk/')
-      assert.equal(organization.contactPoint['@type'], 'ContactPoint')
-      assert.equal(organization.contactPoint.email, 'kristian.duda@extropy.sk')
-      assert.ok(organization.contactPoint.contactType.length > 10)
+      validateOrganization(person.worksFor)
     }],
     ['/llms.txt', 'text/plain', (body) => {
       assert.match(body, /^# Kristian Duda\r?\n\r?\n> /)
@@ -116,7 +135,7 @@ export async function verifyEndpoints(base, { requireNegotiation = false } = {})
       assert.equal(response.status, 200, `expected HTTP 200, received ${response.status}`)
       const expectedType = requireNegotiation ? accept : 'text/html'
       assert.ok(response.headers.get('content-type')?.startsWith(expectedType), `expected ${expectedType}, received ${response.headers.get('content-type')}`)
-      if (requireNegotiation) assert.ok(response.headers.get('vary')?.split(',').some((value) => value.trim().toLowerCase() === 'accept'), 'homepage must vary on Accept')
+      if (requireNegotiation) assert.ok(variesOnAccept(response.headers), 'homepage must vary on Accept')
       const body = await response.text()
       assert.ok(body.trim().length > 20, 'homepage body must not be empty')
       if (requireNegotiation && accept === 'text/markdown') {
@@ -137,10 +156,7 @@ export async function verifyEndpoints(base, { requireNegotiation = false } = {})
       assert.ok(response.headers.get('content-type')?.startsWith(requireNegotiation ? accept : 'text/html'), 'unexpected 404 content type')
       const body = await response.text()
       if (requireNegotiation && accept === 'text/markdown') {
-        assert.ok(body.length >= 20)
-        assert.match(body, /^# 404/)
-        assert.match(body, /\[[^\]]+\]\(https:\/\/kd\.extropy\.sk\/(llms\.txt|sitemap\.xml)\)/)
-        assert.match(response.headers.get('vary'), /accept/i)
+        validateMarkdownError(body, response.headers)
       } else {
         assert.match(body, /^<!DOCTYPE html>/i)
         assert.match(body, /<h1[^>]*>404/)
