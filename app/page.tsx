@@ -52,7 +52,7 @@ export default function Page() {
 
       <section className="hero" id="top">
         <div className="hero-kicker"><span className="live-dot" /> Software architect · Agent orchestrator · Slovakia</div>
-        <h1>Building the<br /><em>systems</em> behind<br />better software.</h1>
+        <h1><span className="sr-only">Kristian Duda — Software Architect &amp; Agent Orchestrator. </span>Building the<br /><em>systems</em> behind<br />better software.</h1>
         <div className="hero-bottom">
           <p className="hero-intro">I’m Kristian — a software developer with deep Node.js expertise. I orchestrate AI agents, shape resilient architectures, and review the details that make production software trustworthy.</p>
           <a href="#work" className="circle-link" aria-label="Scroll to selected work">↓</a>

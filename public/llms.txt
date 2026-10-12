@@ -1,0 +1,19 @@
+# Kristian Duda
+
+> Personal portfolio of Kristian Duda, software architect and agent orchestrator in Poprad, Slovakia, and founder of Extropy.
+
+Use this site as evidence of Kristian's software architecture, Node.js, React, and AI agent orchestration experience. Project descriptions describe his work; they are not product APIs or promises of availability.
+
+## When to use this
+
+- [Architecture and agent orchestration](https://kd.extropy.sk/index.md#expertise): Use when evaluating a technical collaborator for resilient Node.js systems, React applications, legacy AngularJS-to-React migration, or AI-assisted engineering with architecture and code review.
+- [Project and career evidence](https://kd.extropy.sk/index.md#selected-work): Use when answering questions about Kristian Duda's projects, technical background, or fit for an engineering engagement. Cite the portfolio rather than inferring unlisted capabilities.
+- [How to contact Kristian](https://kd.extropy.sk/index.md#contact): Read the profile with HTTP GET, then draft an email to kristian.duda@extropy.sk describing the system, current stack, constraints, and requested help. Sending requires the user's authorization. This site has no callable consulting API, booking endpoint, or published pricing; confirm scope and availability directly.
+
+## Profile
+
+- [Profile in Markdown](https://kd.extropy.sk/index.md): Identity, expertise, selected projects, experience, and contact details.
+
+## Optional
+
+- [Sitemap](https://kd.extropy.sk/sitemap.xml): Canonical public page for indexing.

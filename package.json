@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "test": "node --test tests/export.test.mjs",
+    "test:export": "node --test tests/export.test.mjs",
+    "verify:public": "node scripts/verify-public.mjs https://kd.extropy.sk",
+    "audit:negotiation": "node scripts/verify-public.mjs https://kd.extropy.sk --require-negotiation",
     "start": "pnpm dlx serve@14 out --listen 3000"
   },
   "dependencies": {

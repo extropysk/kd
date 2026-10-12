@@ -11,7 +11,14 @@ export const metadata: Metadata = {
     canonical: 'https://kd.extropy.sk/',
   },
   title: 'Kristian Duda — Software Architect & Agent Orchestrator',
-  description: 'Portfolio of Kristian Duda, software architect and agent orchestrator from Slovakia.',
+  description: 'Kristian Duda is a software architect and agent orchestrator in Poprad, Slovakia, building Node.js systems, React applications, and production software at Extropy.',
+  openGraph: {
+    type: 'website',
+    url: 'https://kd.extropy.sk/',
+    title: 'Kristian Duda — Software Architect & Agent Orchestrator',
+    description: 'Software architecture, Node.js systems, React applications, and AI agent orchestration by Kristian Duda, founder of Extropy.',
+    siteName: 'Kristian Duda',
+  },
   generator: 'v0.app',
 }
 
@@ -21,5 +28,19 @@ export const viewport: Viewport = {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className="bg-background"><body className={`${inter.variable} ${spaceMono.variable} antialiased`}>{children}</body></html>
+  const person = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://kd.extropy.sk/#person',
+    name: 'Kristian Duda',
+    description: metadata.description,
+    url: 'https://kd.extropy.sk/',
+    jobTitle: 'Software Architect & Agent Orchestrator',
+    email: 'kristian.duda@extropy.sk',
+    worksFor: { '@type': 'Organization', name: 'Extropy' },
+    homeLocation: { '@type': 'Place', name: 'Poprad, Slovakia' },
+    sameAs: ['https://github.com/kristianduda', 'https://linkedin.com/in/kristianduda'],
+    knowsAbout: ['Software architecture', 'AI agent orchestration', 'Node.js', 'React', 'Next.js'],
+  }
+  return <html lang="en" className="bg-background"><head><link rel="describedby" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/llms.txt`} /><link rel="alternate" type="text/markdown" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/index.md`} /></head><body className={`${inter.variable} ${spaceMono.variable} antialiased`}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, '\\u003c') }} />{children}</body></html>
 }
