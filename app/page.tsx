@@ -12,6 +12,8 @@ type Project = {
   featured?: boolean
 }
 
+const base = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 const projects: Project[] = [
   { title: 'Stream Circle', period: 'Mar 2026 — Present', category: 'AI systems', description: 'Leading the migration of a legacy AngularJS application to React while orchestrating AI agents to accelerate development and improve engineering efficiency.', stack: 'React.js', number: '01', featured: true },
   { title: 'Tweenly', period: 'Oct 2022 — Present', category: 'Product', description: 'Led the creation of a platform for creating, managing, and broadcasting real-time graphics for live television and video production.', stack: 'React · MUI · NestJS · MongoDB · AWS', number: '02', featured: true },
@@ -54,7 +56,7 @@ export default function Page() {
         <div className="hero-kicker"><span className="live-dot" /> Software architect · Agent orchestrator · Slovakia</div>
         <h1><span className="sr-only">Kristian Duda — Software Architect &amp; Agent Orchestrator. </span>Building the<br /><em>systems</em> behind<br />better software.</h1>
         <div className="hero-bottom">
-          <p className="hero-intro">I’m Kristian — a software developer with deep Node.js expertise. I orchestrate AI agents, shape resilient architectures, and review the details that make production software trustworthy.</p>
+          <p className="hero-intro">I’m Kristian Duda — a software architect with deep Node.js expertise. I orchestrate AI agents, shape resilient architectures, and review the details that make production software trustworthy.</p>
           <a href="#work" className="circle-link" aria-label="Scroll to selected work">↓</a>
           <div className="hero-aside"><span>Currently</span><strong>Founder at Extropy</strong><span>Based in Poprad, Slovakia</span></div>
         </div>
@@ -83,7 +85,7 @@ export default function Page() {
         <div className="education"><span>Education</span><div><strong>Slovak University of Technology in Bratislava</strong><p>Engineer’s Degree in Applied Informatics · 2013 — 2018</p></div></div>
       </section>
 
-      <footer className="footer section-pad"><div className="footer-kicker">Have a system to build?</div><h2>Let’s make it<br /><em>work beautifully.</em></h2><a className="email-link" href="mailto:kristian.duda@extropy.sk">kristian.duda@extropy.sk <span>↗</span></a><div className="footer-bottom"><span>© 2026 Kristian Duda</span><div><a href="https://github.com/kristianduda" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://linkedin.com/in/kristianduda" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><span>Poprad, Slovakia</span></div></footer>
+      <footer className="footer section-pad"><div className="footer-kicker">Have a system to build?</div><h2>Let’s make it<br /><em>work beautifully.</em></h2><a className="email-link" href="mailto:kristian.duda@extropy.sk">kristian.duda@extropy.sk <span>↗</span></a><div className="footer-bottom"><nav aria-label="Portfolio information"><a href={`${base}/about/`}>About</a><a href={`${base}/contact/`}>Contact</a><a href={`${base}/privacy/`}>Privacy</a></nav><div><a href="https://github.com/kristianduda" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://linkedin.com/in/kristianduda" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><span>© 2026 Kristian Duda</span></div></footer>
     </main>
   )
 }

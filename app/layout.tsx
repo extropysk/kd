@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: 'Kristian Duda — Software Architect & Agent Orchestrator',
     description: 'Software architecture, Node.js systems, React applications, and AI agent orchestration by Kristian Duda, founder of Extropy.',
     siteName: 'Kristian Duda',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Kristian Duda — Software Architect & Agent Orchestrator' }],
   },
   generator: 'v0.app',
 }
@@ -37,7 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: 'https://kd.extropy.sk/',
     jobTitle: 'Software Architect & Agent Orchestrator',
     email: 'kristian.duda@extropy.sk',
-    worksFor: { '@type': 'Organization', name: 'Extropy' },
+    worksFor: { '@type': 'Organization', '@id': 'https://extropy.sk/#organization', name: 'Extropy', url: 'https://extropy.sk/', contactPoint: { '@type': 'ContactPoint', email: 'kristian.duda@extropy.sk', contactType: 'Software architecture and engineering inquiries' } },
     homeLocation: { '@type': 'Place', name: 'Poprad, Slovakia' },
     sameAs: ['https://github.com/kristianduda', 'https://linkedin.com/in/kristianduda'],
     knowsAbout: ['Software architecture', 'AI agent orchestration', 'Node.js', 'React', 'Next.js'],

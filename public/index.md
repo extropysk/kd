@@ -38,3 +38,9 @@ Canonical portfolio: https://kd.extropy.sk/
 - LinkedIn: https://linkedin.com/in/kristianduda
 
 For an architecture, migration, or agent-assisted engineering inquiry, describe the system, stack, constraints, and requested help. Confirm scope and availability directly; no pricing or booking API is published.
+
+## Portfolio information
+
+- [About Kristian Duda](https://kd.extropy.sk/about/).
+- [Contact details and inquiry guidance](https://kd.extropy.sk/contact/).
+- [Privacy and hosting information](https://kd.extropy.sk/privacy/).

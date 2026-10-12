@@ -13,7 +13,10 @@ Use this site as evidence of Kristian's software architecture, Node.js, React, a
 ## Profile
 
 - [Profile in Markdown](https://kd.extropy.sk/index.md): Identity, expertise, selected projects, experience, and contact details.
+- [About Kristian Duda](https://kd.extropy.sk/about/): Engineering background and approach to software architecture.
+- [Contact](https://kd.extropy.sk/contact/): Email inquiries, useful project context, and scope confirmation.
+- [Privacy](https://kd.extropy.sk/privacy/): Static hosting, external services, and email contact.
 
 ## Optional
 
-- [Sitemap](https://kd.extropy.sk/sitemap.xml): Canonical public page for indexing.
+- [Sitemap](https://kd.extropy.sk/sitemap.xml): Canonical public pages for indexing.
