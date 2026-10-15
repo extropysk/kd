@@ -10,15 +10,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://kd.extropy.sk/',
   },
-  title: 'Kristian Duda — Software Architect & Agent Orchestrator',
-  description: 'Kristian Duda is a software architect and agent orchestrator in Poprad, Slovakia, building Node.js systems, React applications, and production software at Extropy.',
+  title: 'Kristian Duda — Full-stack Product Builder',
+  description: 'Kristian Duda is a full-stack product builder in Poprad, Slovakia, combining hands-on development, AI-assisted engineering, and business-system integrations at Extropy.',
   openGraph: {
     type: 'website',
     url: 'https://kd.extropy.sk/',
-    title: 'Kristian Duda — Software Architect & Agent Orchestrator',
-    description: 'Software architecture, Node.js systems, React applications, and AI agent orchestration by Kristian Duda, founder of Extropy.',
+    title: 'Kristian Duda — Full-stack Product Builder',
+    description: 'Full-stack product development, AI-assisted engineering, and business-system integrations by Kristian Duda, founder of Extropy.',
     siteName: 'Kristian Duda',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Kristian Duda — Software Architect & Agent Orchestrator' }],
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Kristian Duda — Full-stack Product Builder' }],
   },
   generator: 'v0.app',
 }
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: 'Kristian Duda',
     description: metadata.description,
     url: 'https://kd.extropy.sk/',
-    jobTitle: 'Software Architect & Agent Orchestrator',
+    jobTitle: 'Full-stack Product Builder',
     email: 'kristian.duda@extropy.sk',
     worksFor: {
       '@type': 'Organization',

@@ -1,6 +1,6 @@
 # Kristian Duda
 
-> Personal portfolio of Kristian Duda, software architect and agent orchestrator in Poprad, Slovakia, and founder of Extropy.
+> Personal portfolio of Kristian Duda, full-stack product builder in Poprad, Slovakia, and founder of Extropy. His work combines hands-on development, AI-assisted engineering, and business-system integrations, with ownership from understanding the problem through production delivery.
 
 Use this site as evidence of Kristian's software architecture, Node.js, React, and AI agent orchestration experience. Project descriptions describe his work; they are not product APIs or promises of availability.
 

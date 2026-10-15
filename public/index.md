@@ -1,6 +1,8 @@
-# Kristian Duda — Software Architect & Agent Orchestrator
+# Kristian Duda — Full-stack Product Builder
 
-Kristian Duda is a software architect and agent orchestrator based in Poprad, Slovakia, and founder of Extropy. He builds resilient systems, orchestrates AI agents, and reviews production software.
+Kristian Duda is a full-stack product builder based in Poprad, Slovakia, and founder of Extropy. He combines hands-on full-stack development, software architecture, and technical leadership. His work spans business-system integrations, data-driven products, and production platforms. He uses AI agents to accelerate development, with responsibility for architecture and code review.
+
+AI-assisted Development & Integrations. He takes ownership from understanding the problem through implementation, review, and production delivery.
 
 Canonical portfolio: https://kd.extropy.sk/
 
@@ -14,14 +16,15 @@ Canonical portfolio: https://kd.extropy.sk/
 
 ## Selected work
 
-- Stream Circle: Legacy AngularJS-to-React migration with AI agents supporting development.
-- Tweenly: Platform for creating, managing, and broadcasting real-time graphics for live television and video production. React, MUI, NestJS, MongoDB, AWS.
+- Stream Circle: Leading the AngularJS-to-React migration of a TV automation and playout platform covering media management, scheduling, and live broadcast control. Orchestrating AI agents to support development, with a focus on architecture and code review. React.js.
+- Tweenly: Led the development of a browser-based platform for designing animated broadcast graphics, connecting them to live data, and controlling them on air. The platform brings visual editing and live graphics operation into one workflow. React, MUI, NestJS, MongoDB, AWS.
 - UIS: Event-driven platform for custom business solutions with reusable architecture and integrations. Payload CMS, PostgreSQL, AWS.
-- Modulario: Third-party platform and API integrations. Express.js, React, Tailwind, MongoDB, AWS.
+- Modulario: Designed and implemented third-party integrations for a modular business management platform. Connected external systems and APIs to support reliable data exchange across business workflows. Express.js, React, Tailwind, MongoDB, AWS.
 - Bratislava: E-forms and city account features for the official city website. Next.js, Tailwind.
-- Doby Hory: Social network for mountain enthusiasts. React, ASP.NET Core, MongoDB.
+- Jdi do hor: Social network for mountain enthusiasts. React, ASP.NET Core, MongoDB.
 - CORA GEO Retec: Web framework using React.js and ASP.NET Web API.
 - Ditec Intranet: Internal time tracking application.
+- AFS Retail Execution: Software solution supporting field sales and merchandising. December 2017 to June 2018. Kendo UI, ASP.NET MVC, MSSQL, UWP.
 
 ## Experience
 

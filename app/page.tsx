@@ -15,14 +15,15 @@ type Project = {
 const base = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 const projects: Project[] = [
-  { title: 'Stream Circle', period: 'Mar 2026 — Present', category: 'AI systems', description: 'Leading the migration of a legacy AngularJS application to React while orchestrating AI agents to accelerate development and improve engineering efficiency.', stack: 'React.js', number: '01', featured: true },
-  { title: 'Tweenly', period: 'Oct 2022 — Present', category: 'Product', description: 'Led the creation of a platform for creating, managing, and broadcasting real-time graphics for live television and video production.', stack: 'React · MUI · NestJS · MongoDB · AWS', number: '02', featured: true },
+  { title: 'Stream Circle', period: 'Mar 2026 — Present', category: 'AI systems', description: 'Leading the AngularJS-to-React migration of a TV automation and playout platform covering media management, scheduling, and live broadcast control. Orchestrating AI agents to support development, with a focus on architecture and code review.', stack: 'React.js', number: '01', featured: true },
+  { title: 'Tweenly', period: 'Oct 2022 — Present', category: 'Product', description: 'Led the development of a browser-based platform for designing animated broadcast graphics, connecting them to live data, and controlling them on air. The platform brings visual editing and live graphics operation into one workflow.', stack: 'React · MUI · NestJS · MongoDB · AWS', number: '02', featured: true },
   { title: 'UIS', period: 'Jan 2023 — Present', category: 'Platform', description: 'Spearheading an event-driven platform that accelerates delivery of custom business solutions through reusable architecture and built-in integrations.', stack: 'Payload CMS · PostgreSQL · AWS', number: '03' },
-  { title: 'Modulario', period: 'Sep 2024 — Dec 2025', category: 'Platform', description: 'Designed and implemented third-party integrations, connecting Modulario with external platforms and APIs for reliable data exchange.', stack: 'Express.js · React · Tailwind · MongoDB · AWS', number: '04' },
+  { title: 'Modulario', period: 'Sep 2024 — Dec 2025', category: 'Platform', description: 'Designed and implemented third-party integrations for a modular business management platform. Connected external systems and APIs to support reliable data exchange across business workflows.', stack: 'Express.js · React · Tailwind · MongoDB · AWS', number: '04' },
   { title: 'Bratislava', period: 'Oct 2022 — May 2023', category: 'Civic tech', description: 'Developed e-forms and city account features for the official website of Bratislava.', stack: 'Next.js · Tailwind', number: '05' },
-  { title: 'Doby Hory', period: 'Jan 2021 — Sep 2022', category: 'Product', description: 'Led the development of a social network tailored for mountain enthusiasts.', stack: 'React · ASP.NET Core · MongoDB', number: '06' },
+  { title: 'Jdi do hor', period: 'Jan 2021 — Sep 2022', category: 'Product', description: 'Led the development of a social network tailored for mountain enthusiasts.', stack: 'React · ASP.NET Core · MongoDB', number: '06' },
   { title: 'CORA GEO Retec', period: 'Jul 2018 — May 2022', category: 'Civic tech', description: 'Architected and developed a dynamic web framework utilizing React.js and ASP.NET Web API.', stack: 'React · Kendo UI · ASP.NET · Oracle', number: '07' },
   { title: 'Ditec Intranet', period: 'Oct 2018 — Apr 2020', category: 'Product', description: 'Developed a time tracking application to optimize workflow management and efficiency tracking for internal use.', stack: 'React · MUI · ASP.NET', number: '08' },
+  { title: 'AFS Retail Execution', period: 'Dec 2017 — Jun 2018', category: 'Product', description: 'Contributed to the development of a software solution supporting field sales and merchandising.', stack: 'Kendo UI · ASP.NET MVC · MSSQL · UWP', number: '09' },
 ]
 
 const experience = [
@@ -53,10 +54,10 @@ export default function Page() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-kicker"><span className="live-dot" /> Software architect · Agent orchestrator · Slovakia</div>
-        <h1><span className="sr-only">Kristian Duda — Software Architect &amp; Agent Orchestrator. </span>Building the<br /><em>systems</em> behind<br />better software.</h1>
+        <div className="hero-kicker"><span className="live-dot" /> Full-stack Product Builder · AI-assisted Development &amp; Integrations</div>
+        <h1><span className="sr-only">Kristian Duda — Full-stack Product Builder. </span>From problem<br />to <em>product.</em><br />Into production.</h1>
         <div className="hero-bottom">
-          <p className="hero-intro">I’m Kristian Duda — a software architect with deep Node.js expertise. I orchestrate AI agents, shape resilient architectures, and review the details that make production software trustworthy.</p>
+          <p className="hero-intro">I’m Kristian Duda. I combine hands-on full-stack development, software architecture, and technical leadership. My work spans business-system integrations, data-driven products, and production platforms. I use AI agents to accelerate development, with responsibility for architecture and code review.</p>
           <a href="#work" className="circle-link" aria-label="Scroll to selected work">↓</a>
           <div className="hero-aside"><span>Currently</span><strong>Founder at Extropy</strong><span>Based in Poprad, Slovakia</span></div>
         </div>
@@ -75,7 +76,7 @@ export default function Page() {
 
       <section className="about-section section-pad" id="about">
         <div className="section-heading"><p className="eyebrow">02 / Point of view</p><p className="section-note">The layer between<br />idea and execution.</p></div>
-        <div className="about-grid"><p className="about-statement">While agents write the code, <em>I focus on the architecture.</em></p><div className="about-copy"><p>I believe great software is less about shipping more code and more about creating the conditions for the right code to emerge.</p><p>That means strong systems, clear constraints, and a critical eye for the edge cases. Today, I use AI as a force multiplier — not a shortcut.</p></div></div>
+        <div className="about-grid"><p className="about-statement">From understanding the problem to <em>production delivery.</em></p><div className="about-copy"><p>I take ownership from understanding the problem through implementation, review, and production delivery.</p><p>I combine hands-on development with architecture and technical leadership, using AI agents to accelerate the work. I stay responsible for the solution, its integrations, and the details that make it reliable in practice.</p></div></div>
         <div className="skills-list"><div className="skill-group"><span>Frontend</span><p>React · React Native · Next.js · Tailwind</p></div><div className="skill-group"><span>Backend</span><p>Node.js · NestJS · Payload CMS · PostgreSQL · MongoDB</p></div><div className="skill-group"><span>Tools</span><p>AWS · GitHub · Claude · Codex</p></div></div>
       </section>
 

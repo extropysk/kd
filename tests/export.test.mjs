@@ -89,7 +89,7 @@ test('GitHub Pages static export exposes discovery files while preserving HTML r
     assert.ok(!footer.includes('Poprad, Slovakia'))
     assert.match(html, /rel="alternate" type="text\/markdown" href="[^"]*\/index\.md"/)
     assert.match(html, /rel="describedby" href="[^"]*\/llms\.txt"/)
-    for (const title of ['Stream Circle', 'Tweenly', 'UIS', 'Modulario', 'Bratislava', 'Doby Hory', 'CORA GEO Retec', 'Ditec Intranet']) {
+    for (const title of ['Stream Circle', 'Tweenly', 'UIS', 'Modulario', 'Bratislava', 'Jdi do hor', 'CORA GEO Retec', 'Ditec Intranet', 'AFS Retail Execution']) {
       assert.ok(md.includes(title) && html.includes(title), `${title} must appear in both formats`)
     }
     // All local discovery links must resolve to exported files, not only the known fixture URLs.
