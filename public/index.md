@@ -19,7 +19,7 @@ Canonical portfolio: https://kd.extropy.sk/
 - Stream Circle: Leading the AngularJS-to-React migration of a TV automation and playout platform covering media management, scheduling, and live broadcast control. Orchestrating AI agents to support development, with a focus on architecture and code review. React.js.
 - Tweenly: Led the development of a browser-based platform for designing animated broadcast graphics, connecting them to live data, and controlling them on air. The platform brings visual editing and live graphics operation into one workflow. React, MUI, NestJS, MongoDB, AWS.
 - UIS: Event-driven platform for custom business solutions with reusable architecture and integrations. Payload CMS, PostgreSQL, AWS.
-- Modulario: Designed and implemented third-party integrations for a modular business management platform. Connected external systems and APIs to support reliable data exchange across business workflows. Express.js, React, Tailwind, MongoDB, AWS.
+- AMCEF Modulario: Designed and implemented third-party integrations for a modular business management platform. Connected external systems and APIs to support reliable data exchange across business workflows. Express.js, React, Tailwind, MongoDB, AWS.
 - Bratislava: E-forms and city account features for the official city website. Next.js, Tailwind.
 - Jdi do hor: Social network for mountain enthusiasts. React, ASP.NET Core, MongoDB.
 - CORA GEO Retec: Web framework using React.js and ASP.NET Web API.

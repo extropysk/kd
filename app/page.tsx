@@ -5,7 +5,7 @@ import { useMemo, useState } from 'react'
 type Project = {
   title: string
   period: string
-  category: 'AI systems' | 'Product' | 'Civic tech' | 'Platform'
+  category: 'AI systems' | 'Product' | 'Platform'
   description: string
   stack: string
   number: string
@@ -18,10 +18,10 @@ const projects: Project[] = [
   { title: 'Stream Circle', period: 'Mar 2026 — Present', category: 'AI systems', description: 'Leading the AngularJS-to-React migration of a TV automation and playout platform covering media management, scheduling, and live broadcast control. Orchestrating AI agents to support development, with a focus on architecture and code review.', stack: 'React.js', number: '01', featured: true },
   { title: 'Tweenly', period: 'Oct 2022 — Present', category: 'Product', description: 'Led the development of a browser-based platform for designing animated broadcast graphics, connecting them to live data, and controlling them on air. The platform brings visual editing and live graphics operation into one workflow.', stack: 'React · MUI · NestJS · MongoDB · AWS', number: '02', featured: true },
   { title: 'UIS', period: 'Jan 2023 — Present', category: 'Platform', description: 'Spearheading an event-driven platform that accelerates delivery of custom business solutions through reusable architecture and built-in integrations.', stack: 'Payload CMS · PostgreSQL · AWS', number: '03' },
-  { title: 'Modulario', period: 'Sep 2024 — Dec 2025', category: 'Platform', description: 'Designed and implemented third-party integrations for a modular business management platform. Connected external systems and APIs to support reliable data exchange across business workflows.', stack: 'Express.js · React · Tailwind · MongoDB · AWS', number: '04' },
-  { title: 'Bratislava', period: 'Oct 2022 — May 2023', category: 'Civic tech', description: 'Developed e-forms and city account features for the official website of Bratislava.', stack: 'Next.js · Tailwind', number: '05' },
+  { title: 'AMCEF Modulario', period: 'Sep 2024 — Dec 2025', category: 'Platform', description: 'Designed and implemented third-party integrations for a modular business management platform. Connected external systems and APIs to support reliable data exchange across business workflows.', stack: 'Express.js · React · Tailwind · MongoDB · AWS', number: '04' },
+  { title: 'Bratislava', period: 'Oct 2022 — May 2023', category: 'Product', description: 'Developed e-forms and city account features for the official website of Bratislava.', stack: 'Next.js · Tailwind', number: '05' },
   { title: 'Jdi do hor', period: 'Jan 2021 — Sep 2022', category: 'Product', description: 'Led the development of a social network tailored for mountain enthusiasts.', stack: 'React · ASP.NET Core · MongoDB', number: '06' },
-  { title: 'CORA GEO Retec', period: 'Jul 2018 — May 2022', category: 'Civic tech', description: 'Architected and developed a dynamic web framework utilizing React.js and ASP.NET Web API.', stack: 'React · Kendo UI · ASP.NET · Oracle', number: '07' },
+  { title: 'CORA GEO Retec', period: 'Jul 2018 — May 2022', category: 'Platform', description: 'Architected and developed a dynamic web framework utilizing React.js and ASP.NET Web API.', stack: 'React · Kendo UI · ASP.NET · Oracle', number: '07' },
   { title: 'Ditec Intranet', period: 'Oct 2018 — Apr 2020', category: 'Product', description: 'Developed a time tracking application to optimize workflow management and efficiency tracking for internal use.', stack: 'React · MUI · ASP.NET', number: '08' },
   { title: 'AFS Retail Execution', period: 'Dec 2017 — Jun 2018', category: 'Product', description: 'Contributed to the development of a software solution supporting field sales and merchandising.', stack: 'Kendo UI · ASP.NET MVC · MSSQL · UWP', number: '09' },
 ]
@@ -37,7 +37,7 @@ export default function Page() {
   const [filter, setFilter] = useState('All')
   const [openProject, setOpenProject] = useState<string | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
-  const categories = ['All', 'AI systems', 'Product', 'Platform', 'Civic tech']
+  const categories = ['All', 'AI systems', 'Product', 'Platform']
   const visibleProjects = useMemo(() => filter === 'All' ? projects : projects.filter((project) => project.category === filter), [filter])
 
   return (
@@ -64,7 +64,7 @@ export default function Page() {
       </section>
 
       <section className="work-section section-pad" id="work">
-        <div className="section-heading"><p className="eyebrow">01 / Selected work</p><p className="section-note">Systems, products &amp; platforms<br />built with intent.</p></div>
+        <div className="section-heading"><p className="eyebrow">Selected work</p><p className="section-note">Systems, products &amp; platforms<br />built with intent.</p></div>
         <div className="filter-row" role="toolbar" aria-label="Filter projects">{categories.map((category) => <button key={category} className={filter === category ? 'filter-button active' : 'filter-button'} onClick={() => setFilter(category)}>{category}</button>)}</div>
         <div className="projects-grid">{visibleProjects.map((project) => <article className={project.featured ? 'project-card featured' : 'project-card'} key={project.title}>
           <div className="project-top"><span className="project-number">{project.number}</span><span className="project-period">{project.period}</span></div>
@@ -75,13 +75,13 @@ export default function Page() {
       </section>
 
       <section className="about-section section-pad" id="about">
-        <div className="section-heading"><p className="eyebrow">02 / Point of view</p><p className="section-note">The layer between<br />idea and execution.</p></div>
-        <div className="about-grid"><p className="about-statement">From understanding the problem to <em>production delivery.</em></p><div className="about-copy"><p>I take ownership from understanding the problem through implementation, review, and production delivery.</p><p>I combine hands-on development with architecture and technical leadership, using AI agents to accelerate the work. I stay responsible for the solution, its integrations, and the details that make it reliable in practice.</p></div></div>
+        <div className="section-heading"><p className="eyebrow">Point of view</p><p className="section-note">The layer between<br />idea and execution.</p></div>
+        <div className="about-grid"><p className="about-statement">From understanding the problem to <em>production delivery.</em></p><div className="about-copy"><p>I take ownership from understanding the problem through implementation, review, and production delivery.</p><p>My work spans broadcast platforms, business-system integrations, and public services. That experience shapes how I build: clear architecture, careful integration with existing systems, and attention to the details that make a product reliable in everyday use.</p></div></div>
         <div className="skills-list"><div className="skill-group"><span>Frontend</span><p>React · React Native · Next.js · Tailwind</p></div><div className="skill-group"><span>Backend</span><p>Node.js · NestJS · Payload CMS · PostgreSQL · MongoDB</p></div><div className="skill-group"><span>Tools</span><p>AWS · GitHub · Claude · Codex</p></div></div>
       </section>
 
       <section className="experience-section section-pad" id="experience">
-        <div className="section-heading"><p className="eyebrow">03 / Experience</p><p className="section-note">A decade of making<br />complex things clearer.</p></div>
+        <div className="section-heading"><p className="eyebrow">Experience</p><p className="section-note">A decade of making<br />complex things clearer.</p></div>
         <div className="timeline">{experience.map(([role, company, period, description]) => <div className="timeline-item" key={`${role}-${company}`}><div className="timeline-meta"><span>{period}</span><span>{company}</span></div><div><h2>{role}</h2><p>{description}</p></div></div>)}</div>
         <div className="education"><span>Education</span><div><strong>Slovak University of Technology in Bratislava</strong><p>Engineer’s Degree in Applied Informatics · 2013 — 2018</p></div></div>
       </section>
